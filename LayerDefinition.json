@@ -1,0 +1,589 @@
+{
+	"layers": [{
+			"name": "Transportation",
+			"alias": "Transportation",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Label"
+			},
+			"fields": [{
+					"name": "TransportationType",
+					"alias": "Transportation Type",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Transportation Type",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "TransportationType",
+				"groups": [{
+						"Aerial Tram": {
+							"SymbolName": "Aerial Tram",
+							"Index": 0
+						},
+						"Airport": {
+							"SymbolName": "Airport",
+							"Index": 0
+						},
+						"Bus Station": {
+							"SymbolName": "Bus Station",
+							"Index": 0
+						},
+						"Ferry": {
+							"SymbolName": "Ferry",
+							"Index": 0
+						},
+						"Parking": {
+							"SymbolName": "Parking",
+							"Index": 0
+						},
+						"Subway": {
+							"SymbolName": "Subway",
+							"Index": 0
+						}
+					}
+				]
+			}
+		}, {
+			"name": "Entertainment",
+			"alias": "Entertainment",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Label"
+			},
+			"fields": [{
+					"name": "EntertainmentType",
+					"alias": "Entertainment Type",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Entertainment Type",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "EntertainmentType",
+				"groups": [{
+						"Amusement Park": {
+							"SymbolName": "Amusement Park",
+							"Index": 0
+						},
+						"Casino": {
+							"SymbolName": "Casino",
+							"Index": 0
+						},
+						"Shopping Center": {
+							"SymbolName": "Shopping Center",
+							"Index": 0
+						}
+					}
+				]
+			}
+		}, {
+			"name": "LiveMusicVenue",
+			"alias": "Live Music Venue",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Artist + TextFormatting.NewLine + Day($feature.ConcertDate) + TextFormatting.NewLine + Text($feature.ConcertDate,'MMM') + TextFormatting.NewLine + Text(Text($feature.ConcertDate,'H'),'00') + Text(Text($feature.ConcertDate,'m'),'00')"
+			},
+			"fields": [{
+					"name": "ConcertDate",
+					"alias": "Concert Date",
+					"type": "DATE",
+					"nullable": "NULLABLE",
+					"field_domain": "None"
+				}, {
+					"name": "Artist",
+					"alias": "Artist",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}, {
+					"name": "ConcertsPerYear",
+					"alias": "Shows per Year",
+					"type": "SHORT",
+					"nullable": "NULLABLE",
+					"field_domain": "Concerts per year"
+				}
+			],
+			"symbology": {
+				"renderer": "SimpleRenderer",
+				"symbol": {
+					"SymbolName": "Live Music Venue",
+					"Index": 0
+				}
+			}
+		}, {
+			"name": "Education",
+			"alias": "Educational Institutions",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Label"
+			},
+			"fields": [{
+					"name": "Status",
+					"alias": "Status",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Incident Status 3 Values",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}, {
+					"name": "InstitutionType",
+					"alias": "Institution Type",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Educational institution types",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "InstitutionType",
+				"groups": [{
+						"School": {
+							"SymbolName": "School",
+							"Index": 0
+						},
+						"University": {
+							"SymbolName": "University",
+							"Index": 0
+						},
+						"Museum": {
+							"SymbolName": "Museum",
+							"Index": 9
+						}
+					}
+				]
+			}
+		}, {
+			"name": "PublicSafety",
+			"alias": "Public Safety",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Label"
+			},
+			"fields": [{
+					"name": "PublicSafetyType",
+					"alias": "Public Safety Type",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Public Safety",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "PublicSafetyType",
+				"groups": [{
+						"Fire Station": {
+							"SymbolName": "Fire Station",
+							"Index": 0
+						},
+						"Hospital": {
+							"SymbolName": "Hospital",
+							"Index": 0
+						},
+						"Military Base": {
+							"SymbolName": "Military Base",
+							"Index": 0
+						},
+						"Police Station": {
+							"SymbolName": "Police Station",
+							"Index": 0
+						},
+						"Pharmacy": {
+							"SymbolName": "Pharmacy",
+							"Index": 0
+						}
+					}
+				]
+			}
+		}, {
+			"name": "Dining",
+			"alias": "Eat & Drink",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Name"
+			},
+			"fields": [{
+					"name": "Name",
+					"alias": "Name",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}, {
+					"name": "EstablishmentType",
+					"alias": "Type of Establishment",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Dining",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "EstablishmentType",
+				"groups": [{
+						"Bar": {
+							"SymbolName": "Bar",
+							"Index": 0
+						},
+						"Coffee Shop": {
+							"SymbolName": "Coffee Shop",
+							"Index": 0
+						},
+						"Grocery Store": {
+							"SymbolName": "Grocery Store",
+							"Index": 0
+						},
+						"Restaurant": {
+							"SymbolName": "Restaurant",
+							"Index": 0
+						}
+					}
+				]
+			}
+		}, {
+			"name": "Outdoors",
+			"alias": "Outdoors and Recreation",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Label"
+			},
+			"fields": [{
+					"name": "Name",
+					"alias": "Name",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}, {
+					"name": "OutdoorRecreationType",
+					"alias": "Outdoors & Rec Type",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Outdoors and Recreation",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "OutdoorRecreationType",
+				"groups": [{
+						"Campground": {
+							"SymbolName": "Campground",
+							"Index": 0
+						},
+						"Golf Course": {
+							"SymbolName": "Golf Course",
+							"Index": 0
+						},
+						"Mountain": {
+							"SymbolName": "Mountain",
+							"Index": 9
+						},
+						"Sports Complex": {
+							"SymbolName": "Sports Complex",
+							"Index": 0
+						},
+						"Trail": {
+							"SymbolName": "Trail",
+							"Index": 0
+						}
+					}
+				]
+			}
+		}, {
+			"name": "Municipal",
+			"alias": "City Buildings & Infrastructure",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Label"
+			},
+			"fields": [{
+					"name": "Name",
+					"alias": "Name",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}, {
+					"name": "MunicipalInfraType",
+					"alias": "City Buildings & Info",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Municipal Related",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "MunicipalInfraType",
+				"groups": [{
+						"Accessibility": {
+							"SymbolName": "Accessibility",
+							"Index": 0
+						},
+						"City Hall": {
+							"SymbolName": "City Hall",
+							"Index": 0
+						},
+						"Court House": {
+							"SymbolName": "Court House",
+							"Index": 0
+						},
+						"Information": {
+							"SymbolName": "Information",
+							"Index": 0
+						},
+						"Restroom": {
+							"SymbolName": "Restroom",
+							"Index": 0
+						}
+					}
+				]
+			}
+		}, {
+			"name": "Tourism",
+			"alias": "Tourism & Attractions",
+			"geometry_type": "POINT",
+			"enableLabel": true,
+			"labelProperties": {
+				"expression": "$feature.Label"
+			},
+			"fields": [{
+					"name": "Name",
+					"alias": "Name",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}, {
+					"name": "TourismType",
+					"alias": "Tourism Type",
+					"type": "TEXT",
+					"nullable": "NON_NULLABLE",
+					"field_domain": "Tourism Related",
+					"length": 50
+				}, {
+					"name": "Label",
+					"alias": "Label",
+					"type": "TEXT",
+					"nullable": "NULLABLE",
+					"field_domain": "None",
+					"length": 50
+				}
+			],
+			"symbology": {
+				"renderer": "UniqueValueRenderer",
+				"field": "TourismType",
+				"groups": [{
+						"Aquarium": {
+							"SymbolName": "Aquarium",
+							"Index": 0
+						},
+						"Beach": {
+							"SymbolName": "Beach",
+							"Index": 0
+						},
+						"Hotel": {
+							"SymbolName": "Hotel",
+							"Index": 0
+						},
+						"Landmark": {
+							"SymbolName": "Landmark",
+							"Index": 0
+						},
+						"Theatre": {
+							"SymbolName": "Theatre",
+							"Index": 0
+						},
+						"Vineyard": {
+							"SymbolName": "Vineyard",
+							"Index": 0
+						}
+					}
+				]
+			}
+		}
+	],
+	"fields": [{
+			"name": "FeatureObjectID",
+			"alias": "Identifier",
+			"type": "TEXT",
+			"length": 50,
+			"nullable": "NULLABLE",
+			"field_domain": "None"
+		}, {
+			"name": "Comments",
+			"alias": "Comments",
+			"type": "TEXT",
+			"length": 255,
+			"nullable": "NULLABLE",
+			"field_domain": "None"
+		}
+	],
+	"domains": [{
+			"name": "Transportation Type",
+			"description": "Types of and relating to transportation",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"Aerial Tram": "Aerial Tram",
+				"Airport": "Airport",
+				"Bus Station": "Bus Station",
+				"Ferry": "Ferry",
+				"Parking": "Parking",
+				"Subway": "Subway"
+			}
+		}, {
+			"name": "Entertainment Type",
+			"description": "Types of entertainment venues",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"Amusement Park": "Amusement Park",
+				"Casino": "Casino",
+				"Shopping Center": "Shopping Center"
+			}
+		}, {
+			"name": "Educational institution types",
+			"description": "Types of educational institutions",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"School": "School",
+				"University": "University",
+				"Museum": "Museum"
+			}
+		}, {
+			"name": "Public Safety",
+			"description": "Infrastructure related to public safety.",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"Fire Station": "Fire Station",
+				"Hospital": "Hospital",
+				"Military Base": "Military Base",
+				"Police Station": "Police Station",
+				"Pharmacy": "Pharmacy"
+			}
+		}, {
+			"name": "Dining",
+			"description": "Places for eating and drinking",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"Bar": "Bar",
+				"Coffee Shop": "Coffee Shop",
+				"Grocery Store": "Grocery Store",
+				"Restaurant": "Restaurant"
+			}
+		}, {
+			"name": "Outdoors and Recreation",
+			"description": "Areas related to outdoor activities",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"Campground": "Campground",
+				"Golf Course": "Golf Course",
+				"Mountain": "Mountain",
+				"Sports Complex": "Sports Complex",
+				"Trail": "Trail"
+			}
+		}, {
+			"name": "Concerts per year",
+			"description": "Value indicating how many concerts hosted at venue in year",
+			"field_type": "SHORT",
+			"domain_type": "RANGE",
+			"min": 0,
+			"max": 365
+		}, {
+			"name": "Municipal Related",
+			"description": "Municipal managed building and infrastructure",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"Accessibility": "Accessibility",
+				"City Hall": "City Hall",
+				"Court House": "Court House",
+				"Info Kiosk": "Information",
+				"Restroom": "Restroom"
+			}
+		}, {
+			"name": "Tourism Related",
+			"description": "Tourism related buildings and infrastructure",
+			"field_type": "TEXT",
+			"domain_type": "CODED",
+			"values": {
+				"Aquarium": "Aquarium",
+				"Beach": "Beach",
+				"Hotel": "Hotel",
+				"Landmark": "Landmark",
+				"Theatre": "Theatre",
+				"Vineyard": "Vineyard"
+			}
+		}
+	]
+}

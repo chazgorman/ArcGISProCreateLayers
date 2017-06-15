@@ -1,0 +1,1 @@
+This project includes a python script that can be run in the ArcGIS Pro python window to generate layers based on layer definitions defined in JSON.
