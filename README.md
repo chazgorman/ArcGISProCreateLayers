@@ -8,3 +8,6 @@ From the layer definition JSON, the script generates:
 -Editor tracking on layers
 -Layer symbology for 'Simple Renderer' and for single group 'Unique Value Renderer'
 -Layer aliases
+
+![Alt text](/docs/Demo.png?raw=true "Screenshot of Script Execution")
+
