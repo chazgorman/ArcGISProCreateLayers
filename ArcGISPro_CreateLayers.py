@@ -145,6 +145,33 @@ try:
 			
 		lyr.name = layerAliasDict[lyr.name]
 	
+	print("Setting up Labels")
+	
+	for layer in layerList:
+		lyrName = layerAliasDict[layer["name"]]
+		try:
+			print("Setting up label for " + lyrName)
+			if layer["enableLabel"] == True:
+				mapLyr = m.listLayers(lyrName)[0]
+				if mapLyr.supports("SHOWLABELS"):
+					labelClass = mapLyr.listLabelClasses('*')[0]
+					labelClass.visible = True
+					labelClass.expression = layer['labelProperties']['expression']
+		except Exception as labelEx:
+			print(labelEx)
+			print(labelEx.args[0])
+			print("Exception applying label to " + layer["name"])
+			
+	print("Turning on Labels")
+	
+	for layer in layerList:
+		lyrName = layerAliasDict[layer["name"]]
+		
+		print("Turning on Labels for " + lyrName)
+		if layer["enableLabel"] == True:
+			mapLyr = m.listLayers(lyrName)[0]
+			mapLyr.showLabels = True
+			
 except Exception as err:
 	print(err)
 	print(err.args[0])
