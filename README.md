@@ -20,9 +20,5 @@ Usage:
 7. Press Enter three times to run the script
 8. Sit back and relax
 
-TODO:
-1. Add labelling
-2. More docs on the layer definition JSON
-
 ![Alt text](/docs/Demo.png?raw=true "Screenshot of Script Execution")
 
